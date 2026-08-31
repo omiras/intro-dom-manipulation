@@ -68,32 +68,51 @@
         /* Mostrar información de los nodos DOM */
 
         // 0. Muestra por consola el texto del nodo h2.
+        const header = document.querySelector("#header");
+        console.log("Texto del nodo h2: ", header.textContent);
 
         // 0b. Muestra por consola el texto del nodo h1
+        const productName = document.getElementById("product-name"); // Otra forma de seleccionar un nodo a partir del valor de su atributo 'id'
+        console.log("Texto del nodo h1: ", productName.textContent);
 
         // 1. Muestra por la consola el valor de la propiedad 'src' de la imagen
+        console.log("Valor de la propiedad src: ", document.querySelector("img").src);
 
         // 2. Muestra por consola la descripción de este artículo
+        const productDescription = document.querySelector("#description");
+        console.log("Descripción del artículo: ", productDescription.textContent);
 
         // 3. Muestra el precio del producto por consola
+        const productPrice = document.querySelector(".price");
+        console.log("Precio del producto: ", productPrice.textContent);
 
         // 3. Muestra el precio del producto por consola sin el símbolo del dólar
+        console.log("Precio sin el símbolo del dólar: ", productPrice.textContent.slice(1));
 
         // 4. COMPLICADO. Muestra por consola el valor del estilo en línea 'width' del tag <img>
+        const productImage = document.querySelector("img");
+        console.log("Valor del atributo style de la imagen: ", productImage.style.width);
 
         /* Modificar estilos CSS */
 
         // 6. Cambiar el color del título h2 a verde (green)
+        header.style.color = "green";
 
         // 7. Aumentar el tamaño de fuente del nombre del producto (h1) a 28px
+        header.style.fontSize = "28px";
 
         // 8. Cambia el color de la letra del botón "Add To Cart" al color #002147
+        document.querySelector("button").style.color = "#002147";
 
         // 9. Cambiar el fondo del botón a color mango
+        document.querySelector("button").style.backgroundColor = "#FDBE02";
 
         // 10. Utiliza el método addClass para añdir la clase CSS "fancy-text" a la descripción del producto
+        productDescription.classList.add("fancy-text");
 
         // 5. DIFÍCIL: Aplica un 21% (de incremento) al precio de este producto y muéstralo por consola
+        const newPrice = (productPrice.textContent.slice(1)) * 1.21; // Es necesario quitar el símbolo del dolar para poder multiplicarlo
+        console.log("Nuevo precio tras aplicar el 21%: ", newPrice);
     
     </script>
 
