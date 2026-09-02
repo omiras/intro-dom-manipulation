@@ -68,30 +68,54 @@
         /* Mostrar información de los nodos DOM */
 
         // 0. Muestra por consola el texto del nodo h2.
-
+        // Primero: seleccionamos el nodo y lo guardamos en una variable
+        const productHeader = document.querySelector("#header");
+        console.log("Texto del nodo h2: ", productHeader.textContent);
+        
         // 0b. Muestra por consola el texto del nodo h1
+        console.log(document.querySelector("h1").textContent); // Selecciono el nodo por su selector de etiqueta y no lo guardo en una variable
 
         // 1. Muestra por la consola el valor de la propiedad 'src' de la imagen
+        const productImage = document.querySelector("img");
+        console.log("Atributo src de la imagen: ", productImage.src);
+
+        // Mostrar todas las propiedades del nodo
+        console.dir(productImage);
 
         // 2. Muestra por consola la descripción de este artículo
+        const productDescription = document.querySelector("#description");
+        console.log("Descripción del artículo: ", productDescription.textContent);
 
         // 3. Muestra el precio del producto por consola
+        const productPrice = document.querySelector(".price");
+        console.log("Precio del producto: ", productPrice.textContent);
 
         // 3. Muestra el precio del producto por consola sin el símbolo del dólar
+        console.log("Precio del producto sin el dolar: ", productPrice.textContent.slice(1));
 
         // 4. COMPLICADO. Muestra por consola el valor del estilo en línea 'width' del tag <img>
+        console.log("Valor de la propiedad width: ", productImage.style.width);
 
         /* Modificar estilos CSS */
 
         // 6. Cambiar el color del título h2 a verde (green)
+        // Tengo el header en la variable productHeader
+        productHeader.style.color = "green";
+        document.querySelector("#header").style.color = "red";
 
         // 7. Aumentar el tamaño de fuente del nombre del producto (h1) a 28px
+        document.querySelector("#header").style.fontSize = "28px";
+        console.dir(productHeader);
 
         // 8. Cambia el color de la letra del botón "Add To Cart" al color #002147
+        const button = document.querySelector("button");
+        button.style.color = "#002147";
 
         // 9. Cambiar el fondo del botón a color mango
+        button.style.backgroundColor = "#FDBE02"
 
         // 10. Utiliza el método addClass para añdir la clase CSS "fancy-text" a la descripción del producto
+        productDescription.classList.add("fancy-text");
 
         // 5. DIFÍCIL: Aplica un 21% (de incremento) al precio de este producto y muéstralo por consola
     
