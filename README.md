@@ -2,10 +2,10 @@
 
 Recuerda, estos ejercicios se hacen con Live Server.
 Todos los console.log los verás a través de la consola del navegador Web.
-Lee las instrucciones de cada ejercicio en el mismo fichero.
+Sigue los pasos de cada ejercicio en este README.
 
-1. [Resultado esperado para el ejercicio 1](resultado-esperado-ejercicio-1.png)
-2. [Resultado esperado para el ejercicio 2](resultado-esperado-ejercicio-2.png)
+1. [Ejercicio 1 · Consultar y modificar la tarjeta](#ejercicio-1)
+2. [Ejercicio 2 · Rellenar la tarjeta desde un objeto](#ejercicio-2)
 3. [Ejercicio 3 · Billete de vuelo](index-3.html)
 
 # Introducción a la manipulación del DOM con JavaScript
@@ -802,6 +802,35 @@ Y recuerda:
 > **La consola del navegador es una herramienta para investigar qué está ocurriendo, no solamente un lugar donde imprimir resultados.**
 
 Prueba primero partes pequeñas del ejercicio en la consola antes de escribir toda la solución.
+
+## Ejercicio 1
+
+Abre [index-1.html](index-1.html) con Live Server. Escribe el JavaScript en el bloque `<script>` y usa los selectores del HTML existente. Abre **F12 → Consola** para comprobar las lecturas.
+
+1. Muestra en la consola el texto del `h2` y, en otra línea, el del `h1`.
+2. Muestra el valor de `src` de la imagen.
+3. Muestra la descripción del producto.
+4. Muestra el precio tal como aparece y, en otra línea, sin el símbolo del dólar.
+5. Lee y muestra el valor de `width` escrito en el estilo en línea de la imagen.
+6. Cambia el color del `h2` a verde (`green`).
+7. Cambia el tamaño del nombre del producto (`h1`) a `28px`.
+8. Cambia el color del texto del botón «Add to Cart» a `#002147`.
+9. Cambia el fondo del botón a color mango (`#FDBE02`).
+10. Añade la clase existente `fancy-text` a la descripción con `classList.add()`.
+11. **Reto.** Aumenta el precio un 21 % y muestra el resultado en la consola.
+
+[Resultado esperado del ejercicio 1](resultado-esperado-ejercicio-1.png)
+
+## Ejercicio 2
+
+Abre [index-2.html](index-2.html) con Live Server y usa el objeto `productData` para completar la tarjeta.
+
+1. Coloca `name` en el `h1`, `description` en el párrafo de descripción y `price` en el párrafo del precio. Usa `textContent`.
+2. Asigna `imageURL` a la propiedad `src` de la imagen.
+3. Colorea el texto del precio en verde si es menor o igual a 2000 y en rojo si es mayor.
+4. Cambia `productData.price` a un valor superior a 2000 y recarga la página para comprobar que el precio se vuelve rojo. Con 2000 debe verse verde.
+
+[Resultado esperado del ejercicio 2](resultado-esperado-ejercicio-2.png)
 
 ## Ejercicio 3 · Billete de vuelo
 
