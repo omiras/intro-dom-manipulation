@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3 · Billete de vuelo</title>
+    <style>
+        body { margin: 0; background: #eff3f8; color: #172941; font-family: Arial, sans-serif; }
+        main { max-width: 680px; margin: 32px auto; padding: 0 16px; }
+        .ticket { background: white; border: 1px solid #cad6e4; border-radius: 14px; overflow: hidden; }
+        .ticket header { background: #173859; color: white; padding: 18px 24px; }
+        .ticket h1 { margin: 0 0 12px; font-size: 1.7rem; }
+        .ticket h2 { margin: 0 0 10px; font-size: 1.05rem; }
+        .ticket dl { margin: 0; }
+        .ticket dt { font-size: .85rem; }
+        .ticket dd { margin: 3px 0 8px; font-weight: bold; }
+        .ticket .columns { display: flex; flex-wrap: wrap; gap: 16px 24px; padding: 16px 24px; }
+        .ticket .columns + .columns { border-top: 1px dashed #cad6e4; }
+        .columns > * { flex: 1 1 180px; }
+        .ticket-classes { display: flex; gap: 8px; }
+        .pill { background: #e8eff7; padding: 5px 10px; border-radius: 20px; font-size: .85rem; }
+        .instructions { line-height: 1.5; }
+    </style>
+</head>
+<body>
+    <main>
+        <article class="ticket" aria-label="Billete de vuelo">
+            <header>
+                <h1><span aria-hidden="true">✈</span> <span id="airline">—</span></h1>
+                <dl><div><dt>Número de vuelo</dt><dd id="flight-number">—</dd></div></dl>
+            </header>
+            <div class="columns">
+                <section>
+                    <h2>Salida</h2>
+                    <dl>
+                        <div><dt>Aeropuerto</dt><dd id="departure-airport">—</dd></div>
+                        <div><dt>Fecha</dt><dd id="departure-date">—</dd></div>
+                        <div><dt>Hora</dt><dd id="departure-time">—</dd></div>
+                    </dl>
+                </section>
+                <section>
+                    <h2>Llegada</h2>
+                    <dl>
+                        <div><dt>Aeropuerto</dt><dd id="arrival-airport">—</dd></div>
+                        <div><dt>Fecha</dt><dd id="arrival-date">—</dd></div>
+                        <div><dt>Hora</dt><dd id="arrival-time">—</dd></div>
+                    </dl>
+                </section>
+            </div>
+            <div class="columns">
+                <dl>
+                    <div><dt>Pasajero</dt><dd id="passenger-name">—</dd></div>
+                    <div><dt>Asiento</dt><dd id="seat">—</dd></div>
+                </dl>
+                <section>
+                    <h2>Clase</h2>
+                    <div class="ticket-classes">
+                        <span class="pill" id="economy" style="display: none;">Economy</span>
+                        <span class="pill" id="first-class" style="display: none;">First Class</span>
+                    </div>
+                </section>
+            </div>
+            <dl class="columns">
+                <div><dt>Maletas facturadas</dt><dd id="checked-bags">—</dd></div>
+                <div><dt>Maletas de cabina</dt><dd id="carry-on-bags">—</dd></div>
+            </dl>
+        </article>
+        <section class="instructions" aria-labelledby="ejercicio">
+            <h2 id="ejercicio">Ejercicio 3 · Rellena el billete</h2>
+            <p>El sistema de reservas ya ha recibido los datos del vuelo. Usa el objeto <code>flightReservation</code> para escribir cada valor en el nodo correspondiente del billete.</p>
+            <p>Selecciona los nodos por su <code>id</code> con <code>querySelector</code> y rellénalos con <code>textContent</code>. Une el nombre y el apellido con un espacio. Muestra solo la pastilla que corresponda a <code>ticketClass</code> cambiando su <code>style.display</code>. Prueba ambas clases cambiando el valor en el objeto.</p>
+        </section>
+    </main>
+    <script>
+        const flightReservation = {
+            flightNumber: "AC123",
+            airline: "Air Canada",
+            departure: {
+                airport: "JFK Airport",
+                date: "2023-11-01",
+                time: "08:30 AM",
+            },
+            arrival: {
+                airport: "LAX Airport",
+                date: "2023-11-01",
+                time: "01:45 PM",
+            },
+            passenger: {
+                firstName: "John",
+                lastName: "Doe",
+                passport: "AB123456",
+                contactInfo: {
+                    email: "john.doe@example.com",
+                    phone: "+1 (123) 456-7890",
+                },
+            },
+            seat: "23A",
+            ticketClass: "Economy", // Economy or First Class
+            specialMeals: ["Vegetarian", "Gluten-free"],
+            baggage: {
+                checked: {
+                    quantity: 2,
+                    totalWeight: 3,
+                },
+                carryOn: {
+                    quantity: 1,
+                    totalWeight: 7,
+                },
+            },
+            inFlightServices: ["Entertainment", "Wi-Fi"],
+            loyaltyProgram: {
+                name: "Frequent Flyer",
+                points: 1500,
+            },
+            totalPrice: "$450.00",
+            paymentMethod: "Credit Card",
+            bookingReference: "XYZ789",
+            isConfirmed: true,
+            isCancelled: false,
+            flightStatus: "On time",
+            gate: "B15",
+        };
+        // Todo tu código a partir de esta línea
+        document.querySelector("#airline").textContent = flightReservation.airline;
+        document.querySelector("#flight-number").textContent = flightReservation.flightNumber;
+        document.querySelector("#departure-airport").textContent = flightReservation.departure.airport;
+        document.querySelector("#departure-date").textContent = flightReservation.departure.date;
+        document.querySelector("#departure-time").textContent = flightReservation.departure.time;
+        document.querySelector("#arrival-airport").textContent = flightReservation.arrival.airport;
+        document.querySelector("#arrival-date").textContent = flightReservation.arrival.date;
+        document.querySelector("#arrival-time").textContent = flightReservation.arrival.time;
+        document.querySelector("#passenger-name").textContent = flightReservation.passenger.firstName + " " + flightReservation.passenger.lastName;
+        document.querySelector("#seat").textContent = flightReservation.seat;
+        document.querySelector("#checked-bags").textContent = flightReservation.baggage.checked.quantity;
+        document.querySelector("#carry-on-bags").textContent = flightReservation.baggage.carryOn.quantity;
+
+        if (flightReservation.ticketClass == "Economy") {
+            document.querySelector("#economy").style.display = "block";
+        } else {
+            document.querySelector("#first-class").style.display = "block";
+        }
+    </script>
+</body>
+</html>
