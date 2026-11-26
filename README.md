@@ -6,7 +6,8 @@ Todos los console.log los verás a través de la consola del navegador Web.
 Lee las instrucciones de cada ejercicio en el mismo fichero.
 
 1. [Resultado esperado para el ejercicio 1](resultado-esperado-ejercicio-1.png)
-2. [Resultado esperado para el ejercicio 2 - con audio](https://oscarm.tinytake.com/df/174205c/thumbnail?type=attachments&version_no=0&file_version_no=0&thumbnail_size=preview)
+2. [Resultado esperado para el ejercicio 2](resultado-esperado-ejercicio-2.png)
+3. [Ejercicio 3 · Billete de vuelo](index-3.html)
 
 # Introducción a la manipulación del DOM con JavaScript
 
