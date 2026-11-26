@@ -802,3 +802,47 @@ Y recuerda:
 > **La consola del navegador es una herramienta para investigar qué está ocurriendo, no solamente un lugar donde imprimir resultados.**
 
 Prueba primero partes pequeñas del ejercicio en la consola antes de escribir toda la solución.
+
+## Ejercicio 3 · Billete de vuelo
+
+Abre [index-3.html](index-3.html). El sistema de reservas ya tiene los datos en el objeto `flightReservation`. Escribe el JavaScript debajo del objeto para rellenar el billete.
+
+- Selecciona cada nodo por su `id` con `querySelector` y asigna su `textContent`. Incluye la compañía, el número de vuelo, el aeropuerto, la fecha y la hora de salida y llegada, el asiento y las dos cantidades de maletas.
+- Une el nombre y el apellido con un espacio.
+- Las dos pastillas de clase empiezan ocultas. Cambia `style.display` para mostrar solo la que corresponda a `ticketClass`.
+
+### Prueba otra reserva
+
+Cuando funcione el primer billete, sustituye el objeto `flightReservation` completo por el siguiente. Guarda y recarga la página. Comprueba que cambian todos los datos y que ahora solo aparece **First Class**.
+
+```js
+const flightReservation = {
+    flightNumber: "IB3170",
+    airline: "Iberia",
+    departure: {
+        airport: "Madrid-Barajas",
+        date: "2026-12-15",
+        time: "09:20",
+    },
+    arrival: {
+        airport: "Londres-Heathrow",
+        date: "2026-12-15",
+        time: "10:45",
+    },
+    passenger: {
+        firstName: "Lucía",
+        lastName: "Vega",
+    },
+    seat: "2A",
+    ticketClass: "First Class",
+    baggage: {
+        checked: { quantity: 3 },
+        carryOn: { quantity: 2 },
+    },
+};
+```
+
+### Resultado esperado
+
+- [Billete Economy](resultado-esperado-ejercicio-3-economy.png)
+- [Billete First Class](resultado-esperado-ejercicio-3-first-class.png)

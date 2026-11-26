@@ -19,7 +19,6 @@
         .columns > * { flex: 1 1 180px; }
         .ticket-classes { display: flex; gap: 8px; }
         .pill { background: #e8eff7; padding: 5px 10px; border-radius: 20px; font-size: .85rem; }
-        .instructions { line-height: 1.5; }
     </style>
 </head>
 <body>
@@ -65,11 +64,6 @@
                 <div><dt>Maletas de cabina</dt><dd id="carry-on-bags">—</dd></div>
             </dl>
         </article>
-        <section class="instructions" aria-labelledby="ejercicio">
-            <h2 id="ejercicio">Ejercicio 3 · Rellena el billete</h2>
-            <p>El sistema de reservas ya ha recibido los datos del vuelo. Usa el objeto <code>flightReservation</code> para escribir cada valor en el nodo correspondiente del billete.</p>
-            <p>Selecciona los nodos por su <code>id</code> con <code>querySelector</code> y rellénalos con <code>textContent</code>. Une el nombre y el apellido con un espacio. Muestra solo la pastilla que corresponda a <code>ticketClass</code> cambiando su <code>style.display</code>. Prueba ambas clases cambiando el valor en el objeto.</p>
-        </section>
     </main>
     <script>
         const flightReservation = {
