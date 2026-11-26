@@ -8,6 +8,79 @@ Sigue los pasos de cada ejercicio en este README.
 2. [Ejercicio 2 · Rellenar la tarjeta desde un objeto](#ejercicio-2)
 3. [Ejercicio 3 · Billete de vuelo](index-3.html)
 
+## Ejercicio 1
+
+Abre [index-1.html](index-1.html) con Live Server. Escribe el JavaScript en el bloque `<script>` y usa los selectores del HTML existente. Abre **F12 → Consola** para comprobar las lecturas.
+
+1. Muestra en la consola el texto del `h2` y, en otra línea, el del `h1`.
+2. Muestra el valor de `src` de la imagen.
+3. Muestra la descripción del producto.
+4. Muestra el precio tal como aparece y, en otra línea, sin el símbolo del dólar.
+5. Lee y muestra el valor de `width` escrito en el estilo en línea de la imagen.
+6. Cambia el color del `h2` a verde (`green`).
+7. Cambia el tamaño del nombre del producto (`h1`) a `28px`.
+8. Cambia el color del texto del botón «Add to Cart» a `#002147`.
+9. Cambia el fondo del botón a color mango (`#FDBE02`).
+10. Añade la clase existente `fancy-text` a la descripción con [`classList.add()` (ejemplos de MDN)](https://developer.mozilla.org/es/docs/Web/API/Element/classList#ejemplos).
+11. **Reto.** Aumenta el precio un 21 % y muestra el resultado en la consola.
+
+[Resultado esperado del ejercicio 1](resultado-esperado-ejercicio-1.png)
+
+## Ejercicio 2
+
+Abre [index-2.html](index-2.html) con Live Server y usa el objeto `productData` para completar la tarjeta.
+
+1. Coloca `name` en el `h1`, `description` en el párrafo de descripción y `price` en el párrafo del precio. Usa `textContent`.
+2. Asigna `imageURL` a la propiedad `src` de la imagen.
+3. Colorea el texto del precio en verde si es menor o igual a 2000 y en rojo si es mayor.
+4. Cambia `productData.price` a un valor superior a 2000 y recarga la página para comprobar que el precio se vuelve rojo. Con 2000 debe verse verde.
+
+[Resultado esperado del ejercicio 2](resultado-esperado-ejercicio-2.png)
+
+## Ejercicio 3 · Billete de vuelo
+
+Abre [index-3.html](index-3.html). El sistema de reservas ya tiene los datos en el objeto `flightReservation`. Escribe el JavaScript debajo del objeto para rellenar el billete.
+
+- Selecciona cada nodo por su `id` con `querySelector` y asigna su `textContent`. Incluye la compañía, el número de vuelo, el aeropuerto, la fecha y la hora de salida y llegada, el asiento y las dos cantidades de maletas.
+- Une el nombre y el apellido con un espacio.
+- Las dos pastillas de clase empiezan ocultas. Cambia `style.display` para mostrar solo la que corresponda a `ticketClass`.
+
+### Prueba otra reserva
+
+Cuando funcione el primer billete, sustituye el objeto `flightReservation` completo por el siguiente. Guarda y recarga la página. Comprueba que cambian todos los datos y que ahora solo aparece **First Class**.
+
+```js
+const flightReservation = {
+    flightNumber: "IB3170",
+    airline: "Iberia",
+    departure: {
+        airport: "Madrid-Barajas",
+        date: "2026-12-15",
+        time: "09:20",
+    },
+    arrival: {
+        airport: "Londres-Heathrow",
+        date: "2026-12-15",
+        time: "10:45",
+    },
+    passenger: {
+        firstName: "Lucía",
+        lastName: "Vega",
+    },
+    seat: "2A",
+    ticketClass: "First Class",
+    baggage: {
+        checked: { quantity: 3 },
+        carryOn: { quantity: 2 },
+    },
+};
+```
+
+### Resultado esperado
+
+- [Billete Economy](resultado-esperado-ejercicio-3-economy.png)
+- [Billete First Class](resultado-esperado-ejercicio-3-first-class.png)
+
 # Introducción a la manipulación del DOM con JavaScript
 
 Hasta ahora hemos utilizado JavaScript para trabajar con **datos, variables, arrays, objetos, funciones y condiciones**.
@@ -802,76 +875,3 @@ Y recuerda:
 > **La consola del navegador es una herramienta para investigar qué está ocurriendo, no solamente un lugar donde imprimir resultados.**
 
 Prueba primero partes pequeñas del ejercicio en la consola antes de escribir toda la solución.
-
-## Ejercicio 1
-
-Abre [index-1.html](index-1.html) con Live Server. Escribe el JavaScript en el bloque `<script>` y usa los selectores del HTML existente. Abre **F12 → Consola** para comprobar las lecturas.
-
-1. Muestra en la consola el texto del `h2` y, en otra línea, el del `h1`.
-2. Muestra el valor de `src` de la imagen.
-3. Muestra la descripción del producto.
-4. Muestra el precio tal como aparece y, en otra línea, sin el símbolo del dólar.
-5. Lee y muestra el valor de `width` escrito en el estilo en línea de la imagen.
-6. Cambia el color del `h2` a verde (`green`).
-7. Cambia el tamaño del nombre del producto (`h1`) a `28px`.
-8. Cambia el color del texto del botón «Add to Cart» a `#002147`.
-9. Cambia el fondo del botón a color mango (`#FDBE02`).
-10. Añade la clase existente `fancy-text` a la descripción con `classList.add()`.
-11. **Reto.** Aumenta el precio un 21 % y muestra el resultado en la consola.
-
-[Resultado esperado del ejercicio 1](resultado-esperado-ejercicio-1.png)
-
-## Ejercicio 2
-
-Abre [index-2.html](index-2.html) con Live Server y usa el objeto `productData` para completar la tarjeta.
-
-1. Coloca `name` en el `h1`, `description` en el párrafo de descripción y `price` en el párrafo del precio. Usa `textContent`.
-2. Asigna `imageURL` a la propiedad `src` de la imagen.
-3. Colorea el texto del precio en verde si es menor o igual a 2000 y en rojo si es mayor.
-4. Cambia `productData.price` a un valor superior a 2000 y recarga la página para comprobar que el precio se vuelve rojo. Con 2000 debe verse verde.
-
-[Resultado esperado del ejercicio 2](resultado-esperado-ejercicio-2.png)
-
-## Ejercicio 3 · Billete de vuelo
-
-Abre [index-3.html](index-3.html). El sistema de reservas ya tiene los datos en el objeto `flightReservation`. Escribe el JavaScript debajo del objeto para rellenar el billete.
-
-- Selecciona cada nodo por su `id` con `querySelector` y asigna su `textContent`. Incluye la compañía, el número de vuelo, el aeropuerto, la fecha y la hora de salida y llegada, el asiento y las dos cantidades de maletas.
-- Une el nombre y el apellido con un espacio.
-- Las dos pastillas de clase empiezan ocultas. Cambia `style.display` para mostrar solo la que corresponda a `ticketClass`.
-
-### Prueba otra reserva
-
-Cuando funcione el primer billete, sustituye el objeto `flightReservation` completo por el siguiente. Guarda y recarga la página. Comprueba que cambian todos los datos y que ahora solo aparece **First Class**.
-
-```js
-const flightReservation = {
-    flightNumber: "IB3170",
-    airline: "Iberia",
-    departure: {
-        airport: "Madrid-Barajas",
-        date: "2026-12-15",
-        time: "09:20",
-    },
-    arrival: {
-        airport: "Londres-Heathrow",
-        date: "2026-12-15",
-        time: "10:45",
-    },
-    passenger: {
-        firstName: "Lucía",
-        lastName: "Vega",
-    },
-    seat: "2A",
-    ticketClass: "First Class",
-    baggage: {
-        checked: { quantity: 3 },
-        carryOn: { quantity: 2 },
-    },
-};
-```
-
-### Resultado esperado
-
-- [Billete Economy](resultado-esperado-ejercicio-3-economy.png)
-- [Billete First Class](resultado-esperado-ejercicio-3-first-class.png)
